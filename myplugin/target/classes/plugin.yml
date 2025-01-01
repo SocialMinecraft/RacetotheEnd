@@ -1,0 +1,12 @@
+name: RacetotheEnd
+version: 1.0-SNAPSHOT
+main: com.example.App
+api-version: 1.13
+commands:
+  mycommand:
+    description: A sample command
+    usage: /<command>
+permissions:
+  myplugin.use:
+    description: Allows the user to use the plugin
+    default: true
