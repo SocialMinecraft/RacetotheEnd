@@ -1,9 +1,6 @@
-package com.example;
+package club.somc.endrace;
 
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import com.example.PlayerDataManager.PlayerData;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

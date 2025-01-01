@@ -1,5 +1,5 @@
-com\example\EndPortalHandler.class
-com\example\EndPortalHandler$1.class
-com\example\PlayerDataManager.class
-com\example\App.class
-com\example\PlayerDataManager$PlayerData.class
+club/somc/endrace/EndPortalHandler$1.class
+club/somc/endrace/EndPortalHandler.class
+club/somc/endrace/PlayerDataManager.class
+club/somc/endrace/App.class
+club/somc/endrace/PlayerDataManager$PlayerData.class

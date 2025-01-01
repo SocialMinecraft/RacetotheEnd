@@ -1,4 +1,4 @@
-package com.example;
+package club.somc.endrace;
 
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -6,7 +6,6 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Objective;
-import org.bukkit.scoreboard.ScoreboardManager;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.Bukkit;
 
@@ -41,6 +40,7 @@ public class EndPortalHandler {
         UUID playerId = event.getPlayer().getUniqueId();
         // Check if the player is touching an end portal
         if (event.getTo().getBlock().getType() == Material.END_PORTAL) {
+            System.out.println("Hello");
             if (!playersTouchedEndPortal.contains(playerId)) {
                 playersTouchedEndPortal.add(playerId);
                 PlayerDataManager.PlayerData data = playerDataManager.getPlayerData(playerId);
