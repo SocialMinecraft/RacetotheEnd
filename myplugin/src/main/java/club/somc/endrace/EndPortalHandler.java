@@ -39,8 +39,7 @@ public class EndPortalHandler {
     public void handlePlayerMove(PlayerMoveEvent event) {
         UUID playerId = event.getPlayer().getUniqueId();
         // Check if the player is touching an end portal
-        if (event.getTo().getBlock().getType() == Material.END_PORTAL) {
-            System.out.println("Hello");
+        if (event.getTo().getBlock().getType() == Material.END_PORTAL_FRAME) {
             if (!playersTouchedEndPortal.contains(playerId)) {
                 playersTouchedEndPortal.add(playerId);
                 PlayerDataManager.PlayerData data = playerDataManager.getPlayerData(playerId);
