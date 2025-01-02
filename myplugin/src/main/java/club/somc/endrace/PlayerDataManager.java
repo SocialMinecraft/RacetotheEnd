@@ -179,6 +179,7 @@ public class PlayerDataManager {
             if (data.finished) {
                 continue;
             }
+            if (data.lastLoginTime <= 0) continue;
             long sessionTime = currentTime - data.lastLoginTime;
             data.totalPlayTime += sessionTime;
             data.lastLoginTime = currentTime;
@@ -190,8 +191,8 @@ public class PlayerDataManager {
      * Data structure to store player data.
      */
     public static class PlayerData {
-        long lastLoginTime;
-        long totalPlayTime;
-        boolean finished;
+        long lastLoginTime = 0;
+        long totalPlayTime = 0;
+        boolean finished = false;
     }
 }
