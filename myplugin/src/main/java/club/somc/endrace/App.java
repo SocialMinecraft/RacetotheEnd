@@ -134,21 +134,24 @@ public class App extends JavaPlugin implements Listener {
         long seconds = TimeUnit.MILLISECONDS.toSeconds(millis) % 60;
 
         if (days > 0) {
-            return String.format("%d day%s, %d hour%s, %d minute%s",
+            return String.format("%dd %dh %dm", days, hours, minutes);
+            /*return String.format("%d day%s, %d hour%s, %d minute%s",
                                  days, days > 1 ? "s" : "",
                                  hours, hours > 1 ? "s" : "",
-                                 minutes, minutes > 1 ? "s" : "");
+                                 minutes, minutes > 1 ? "s" : "");*/
         }
         if (hours > 0) {
-            return String.format("%d hour%s, %d minute%s, %d second%s",
+            return String.format("%dh %dm %ds", hours, minutes, seconds);
+            /*return String.format("%d hour%s, %d minute%s, %d second%s",
                                  hours, hours > 1 ? "s" : "",
                                  minutes, minutes > 1 ? "s" : "",
-                                 seconds, seconds > 1 ? "s" : "");
+                                 seconds, seconds > 1 ? "s" : "");*/
         }
         if (minutes > 0) {
-            return String.format("%d minute%s, %d second%s",
+            return String.format("%dm %ds", minutes, seconds);
+            /*return String.format("%d minute%s, %d second%s",
                                  minutes, minutes > 1 ? "s" : "",
-                                 seconds, seconds > 1 ? "s" : "");
+                                 seconds, seconds > 1 ? "s" : "");*/
         }
         return String.format("%d second%s", seconds, seconds > 1 ? "s" : "");
     }
