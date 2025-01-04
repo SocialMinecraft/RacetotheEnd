@@ -84,6 +84,7 @@ public class App extends JavaPlugin implements Listener {
         if (data != null && !data.finished) {
             long sessionTime = System.currentTimeMillis() - data.lastLoginTime;
             data.totalPlayTime += sessionTime;
+            data.lastLoginTime = 0;
             playerDataManager.getPlayerData().put(playerId, data);
         }
     }
