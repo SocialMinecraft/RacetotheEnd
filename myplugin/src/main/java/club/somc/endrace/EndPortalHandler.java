@@ -1,6 +1,7 @@
 package club.somc.endrace;
 
 import org.bukkit.Material;
+import org.bukkit.Statistic;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.inventory.ItemStack;
@@ -66,7 +67,8 @@ public class EndPortalHandler {
 
                         // Save player finish data
                         playerDataManager.savePlayerData(playerId, data.totalPlayTime, true);
-                        playerDataManager.savePlayerFinishData(playerId, player.getName(), data.totalPlayTime);
+                        plugin.getLogger().info(player.getName() + " has reached the end, and it took them." + formattedTime + ". Playtime Stat: " + player.getStatistic(Statistic.PLAY_ONE_MINUTE));
+                        playerDataManager.savePlayerFinishData(playerId, player.getName(), data.totalPlayTime, player.getStatistic(Statistic.PLAY_ONE_MINUTE));
                     } else {
                         int neededEyes = requiredEyes - playerEyes;
                         event.getPlayer().sendMessage("You have " + playerEyes + " eyes of ender\nYou need " + neededEyes + " more eyes of ender to finish.");

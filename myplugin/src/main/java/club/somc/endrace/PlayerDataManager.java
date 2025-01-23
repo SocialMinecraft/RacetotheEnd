@@ -156,13 +156,13 @@ public class PlayerDataManager {
      * @param playerName The name of the player
      * @param totalTime The total play time of the player in milliseconds
      */
-    public void savePlayerFinishData(UUID playerId, String playerName, long totalTime) {
+    public void savePlayerFinishData(UUID playerId, String playerName, long totalTime, long playtime) {
         if (!finishDataFile.getParentFile().exists()) {
             finishDataFile.getParentFile().mkdirs();
         }
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(finishDataFile, true))) {
-            writer.write(String.format("%s,%s,%d\n", playerId, playerName, totalTime));
+            writer.write(String.format("%s,%s,%d,%d\n", playerId, playerName, totalTime, playtime));
             plugin.getLogger().info("Player finish data saved for " + playerName);
         } catch (IOException e) {
             e.printStackTrace();
